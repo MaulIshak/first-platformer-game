@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://d207dhdciwjq0"]
+[gd_scene load_steps=19 format=3 uid="uid://d207dhdciwjq0"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_76t87"]
 [ext_resource type="PackedScene" uid="uid://cky4k2ntawid5" path="res://scenes/player.tscn" id="1_peexu"]
 [ext_resource type="Texture2D" uid="uid://bf0iici8ii5ch" path="res://assets/sprites/world_tileset.png" id="2_tevjb"]
+[ext_resource type="FontFile" uid="uid://g2rd58hgiaxt" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vdw2r"]
 [ext_resource type="PackedScene" uid="uid://dirf1hbhovpb2" path="res://scenes/platform.tscn" id="3_liu85"]
 [ext_resource type="PackedScene" uid="uid://b1mcrnyneyc3i" path="res://scenes/coin.tscn" id="4_pjck2"]
 [ext_resource type="PackedScene" uid="uid://dcbcud12wea6v" path="res://scenes/killzone.tscn" id="5_jm515"]
 [ext_resource type="PackedScene" uid="uid://ckipnsd7p2xja" path="res://scenes/slime.tscn" id="6_5of3p"]
+[ext_resource type="FontFile" uid="uid://qbhavse2tunp" path="res://assets/fonts/PixelOperator8.ttf" id="8_3mn6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4kod"]
 texture = ExtResource("2_tevjb")
@@ -491,6 +494,21 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_76t87")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = -88.0
+offset_top = -217.0
+offset_right = 106.0
+offset_bottom = -194.0
+theme_override_colors/font_color = Color(0.0784314, 0.596078, 0.862745, 1)
+theme_override_fonts/font = ExtResource("2_vdw2r")
+theme_override_font_sizes/font_size = 8
+text = "You collected X coins."
+horizontal_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rsyua")
 format = 2
@@ -516,7 +534,7 @@ position_smoothing_enabled = true
 position = Vector2(103, 8)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("4_pjck2")]
-position = Vector2(234, -18)
+position = Vector2(235, 3)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("4_pjck2")]
 position = Vector2(352, -37)
@@ -584,3 +602,61 @@ position = Vector2(665, -12)
 
 [node name="Slime2" parent="." instance=ExtResource("6_5of3p")]
 position = Vector2(298, -236)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="ControlLabel" type="Label" parent="Labels"]
+offset_left = 58.0
+offset_top = -43.0
+offset_right = 252.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_3mn6p")
+theme_override_font_sizes/font_size = 8
+text = "Press a to move left.
+Press d to move right."
+horizontal_alignment = 1
+
+[node name="ControlLabel2" type="Label" parent="Labels"]
+offset_left = 253.0
+offset_top = -29.0
+offset_right = 447.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_3mn6p")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump."
+horizontal_alignment = 1
+
+[node name="SlimeLabel" type="Label" parent="Labels"]
+offset_left = 567.0
+offset_top = -38.0
+offset_right = 761.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_3mn6p")
+theme_override_font_sizes/font_size = 8
+text = "Watchout! Slime!"
+horizontal_alignment = 1
+
+[node name="AlmostLabel" type="Label" parent="Labels"]
+offset_left = 223.0
+offset_top = -304.0
+offset_right = 417.0
+offset_bottom = -288.0
+theme_override_colors/font_color = Color(0.0784314, 0.596078, 0.862745, 1)
+theme_override_fonts/font = ExtResource("8_3mn6p")
+theme_override_font_sizes/font_size = 8
+text = "Almost there!"
+horizontal_alignment = 1
+
+[node name="FinishLabel" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = -235.0
+offset_right = 104.0
+offset_bottom = -219.0
+theme_override_colors/font_color = Color(0.0784314, 0.596078, 0.862745, 1)
+theme_override_fonts/font = ExtResource("8_3mn6p")
+theme_override_font_sizes/font_size = 8
+text = "Great job!"
+horizontal_alignment = 1
