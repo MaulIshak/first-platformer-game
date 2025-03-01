@@ -16,4 +16,4 @@ I created this game by following a tutorial from Brackeys. The assets used in th
 You can find the assets used in this game here: [Brackeys Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle)
 
 ## Screnshot
-![Game Screenshot]([URL_OF_THE_IMAGE](https://github.com/MaulIshak/first-platformer-game/blob/main/screenshots/screenshot_1.png))
+![Game Screenshot]((https://github.com/MaulIshak/first-platformer-game/blob/main/screenshots/screenshot_1.png))
