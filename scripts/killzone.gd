@@ -1,9 +1,11 @@
 extends Area2D
 
 @onready var timer = $Timer
+@onready var hurt = $Hurt
 
 func _on_body_entered(body):
 	print("You Die")
+	hurt.playing = true
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()

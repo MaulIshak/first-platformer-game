@@ -168,7 +168,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_glr83"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxrew"]
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -177,9 +177,9 @@ script = ExtResource("1_ramda")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x1mm6")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_glr83")
+shape = SubResource("CircleShape2D_yxrew")
